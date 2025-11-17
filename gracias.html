@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>¡Gracias por tu Compra! | OferMax</title>
+  <meta name="description" content="Gracias por tu pedido. Un asesor se comunicará contigo pronto.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="src/assets/css/style.css">
+</head>
+<body class="bg-gradient-to-b from-emerald-50 to-sky-50 text-slate-800 font-sans">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-md sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="src/assets/images/ofermax_logo_nf.png" alt="OferMax" class="h-10 transition-transform group-hover:scale-105">
+        <div>
+          <div class="text-xs text-slate-500">Ofertas Frías • Diciembre</div>
+          <div class="text-xl font-extrabold bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">OferMax</div>
+        </div>
+      </a>
+      <a href="index.html" class="text-sky-600 hover:text-sky-700 font-semibold text-sm">← Volver a inicio</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    
+    <!-- AGRADECIMIENTO -->
+    <div class="animate__animated animate__fadeInDown mb-12 text-center">
+      <div class="mb-4 flex justify-center">
+        <svg class="h-24 w-24 text-emerald-500 animate-bounce" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-emerald-600 mb-2">¡Gracias por tu Compra!</h1>
+      <p class="text-slate-600 text-lg">Tu pedido ha sido recibido correctamente.</p>
+    </div>
+
+    <!-- MENSAJE DE ASESOR -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8 border-l-4 border-emerald-500">
+      <p class="text-slate-700 text-center text-lg font-medium">
+        <strong>Un asesor se comunicará contigo en un lapso de 24–48 horas</strong> para confirmar tu envío y coordinar el pago.
+      </p>
+    </div>
+
+    <!-- RESUMEN DEL PEDIDO -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-extrabold text-slate-900 mb-6">Resumen de tu Pedido</h2>
+      
+      <div class="space-y-4">
+        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+          <span class="text-slate-600">Producto:</span>
+          <span id="order-product" class="font-semibold text-slate-900">--</span>
+        </div>
+        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+          <span class="text-slate-600">Cantidad:</span>
+          <span id="order-qty" class="font-semibold text-slate-900">--</span>
+        </div>
+        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+          <span class="text-slate-600">Precio por kit:</span>
+          <span id="order-price-per-kit" class="font-semibold text-slate-900">--</span>
+        </div>
+        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+          <span class="text-slate-600">Subtotal:</span>
+          <span id="order-subtotal" class="font-semibold text-slate-900">--</span>
+        </div>
+        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+          <span class="text-slate-600">Descuento:</span>
+          <span id="order-discount" class="font-semibold text-emerald-600">-- %</span>
+        </div>
+        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+          <span class="text-slate-600">Monto ahorrado:</span>
+          <span id="order-saved" class="font-semibold text-emerald-600">--</span>
+        </div>
+        <div class="flex justify-between items-center py-4 bg-emerald-50 p-4 rounded-lg">
+          <span class="text-lg font-bold text-slate-900">Total a pagar:</span>
+          <span id="order-total" class="text-2xl font-extrabold text-emerald-600">--</span>
+        </div>
+      </div>
+
+      <hr class="my-6" />
+
+      <h3 class="text-xl font-bold text-slate-900 mb-4">Datos de Contacto</h3>
+      <div class="space-y-3">
+        <div class="flex justify-between">
+          <span class="text-slate-600">Nombre:</span>
+          <span id="order-name" class="font-semibold text-slate-900">--</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-600">Teléfono (WhatsApp):</span>
+          <span id="order-phone" class="font-semibold text-slate-900">--</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-600">Dirección:</span>
+          <span id="order-address" class="font-semibold text-slate-900">--</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTÓN DE CONFIRMACIÓN POR WHATSAPP -->
+    <div class="bg-gradient-to-r from-emerald-50 to-sky-50 rounded-2xl shadow-lg p-8 mb-8 border border-emerald-200">
+      <h2 class="text-xl font-bold text-slate-900 mb-4 text-center">¿Quieres confirmar tu pedido?</h2>
+      <button id="whatsapp-confirm-btn" class="w-full h-12 sm:h-14 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
+        💬 Notificar Confirmación de mi Pedido
+      </button>
+      <p class="text-xs text-slate-500 text-center mt-3">Al hacer clic, se abrirá WhatsApp con tu mensaje de confirmación.</p>
+    </div>
+
+    <!-- POLÍTICAS -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">Políticas Importantes</h2>
+      
+      <div class="space-y-6">
+        <!-- Política de Garantía -->
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">📋 Política de Garantía</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Todos nuestros productos cuentan con <strong>garantía de 12 meses</strong> contra defectos de fabricación. 
+            Si tu producto presenta algún fallo durante este período, nos encargaremos de repararlo o reemplazarlo sin costo adicional.
+          </p>
+        </div>
+
+        <!-- Política de Devoluciones -->
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">🔄 Política de Devoluciones</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Tienes <strong>30 días</strong> desde la recepción de tu compra para solicitar una devolución o cambio. 
+            El producto debe estar en perfectas condiciones y con su empaque original. El costo de envío de devolución 
+            será cubierto por el cliente.
+          </p>
+        </div>
+
+        <!-- Política de Privacidad -->
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">🔒 Política de Privacidad</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Tu información personal es confidencial y no será compartida con terceros. Usamos tus datos únicamente 
+            para procesar tu pedido, envío y comunicaciones relacionadas. Puedes solicitar la eliminación de tus datos 
+            en cualquier momento contactándanos por WhatsApp.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-20 bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="flex items-start gap-4">
+          <img src="src/assets/images/ofermax_logo_nf.png" alt="OferMax" class="h-10">
+          <div>
+            <div class="font-bold text-lg mb-1">OferMax</div>
+            <p class="text-gray-400 text-sm">Ofertas frías de diciembre para todo México</p>
+          </div>
+        </div>
+        <div>
+          <div class="font-bold mb-3">Contacto</div>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>📧 hola@ofermax.com</li>
+            <li>📱 WhatsApp: +52 669 382 1944</li>
+            <li>🕐 Lun–Vie 9:00–18:00</li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-bold mb-3">Garantía & Envío</div>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>✓ Devoluciones 30 días</li>
+            <li>✓ Garantía 12 meses</li>
+            <li>✓ FedEx / DHL / Estafeta</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-gray-400 text-sm">© 2025 OferMax • Todos los derechos reservados</div>
+        <a href="#" class="text-gray-400 hover:text-white text-sm transition">Política de privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT PARA LLENAR DATOS DESDE LOCALSTORAGE -->
+  <script>
+    const OWNER_WHATSAPP = "526693821944";
+
+    // Leer datos de localStorage
+    const orderDataRaw = localStorage.getItem('last_order');
+    if (orderDataRaw) {
+      const orderData = JSON.parse(orderDataRaw);
+
+      // Rellenar campos en la página
+      document.getElementById('order-product').textContent = orderData.product || '--';
+      document.getElementById('order-qty').textContent = orderData.qty || '--';
+      document.getElementById('order-price-per-kit').textContent = `$${orderData.pricePerKit || '0.00'} MXN`;
+      document.getElementById('order-subtotal').textContent = `$${orderData.subtotal || '0.00'} MXN`;
+      document.getElementById('order-discount').textContent = `${orderData.discountPercent || 0}%`;
+      document.getElementById('order-saved').textContent = `-$${orderData.totalDiscount || '0.00'} MXN`;
+      document.getElementById('order-total').textContent = `$${orderData.total || '0.00'} MXN`;
+      document.getElementById('order-name').textContent = orderData.name || '--';
+      document.getElementById('order-phone').textContent = orderData.phone || '--';
+      document.getElementById('order-address').textContent = orderData.address || 'No proporcionada';
+
+      // Botón de confirmación WhatsApp
+      document.getElementById('whatsapp-confirm-btn').addEventListener('click', function() {
+        const confirmMessage = `Hola, confirmo mi pedido: ${orderData.qty}. Total pagado: $${orderData.total}. Mi nombre es ${orderData.name}.`;
+        const waLink = `https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(confirmMessage)}`;
+        window.open(waLink, '_blank');
+      });
+    } else {
+      // Si no hay datos en localStorage, mostrar aviso
+      console.warn('No se encontraron datos de pedido en localStorage');
+    }
+  </script>
+
+</body>
+</html>

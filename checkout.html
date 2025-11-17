@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | OferMax</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="src/assets/images/ofermax_logo_nf.png" type="image/png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="src/assets/css/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="checkout-wrapper container">
+        <div class="row justify-content-center g-4">
+            
+            <div class="col-lg-6 col-md-8">
+                <div class="checkout-header-custom">
+                     <a href="index.html" class="btn-volver">
+                        <i class="fas fa-arrow-left me-1"></i> Volver
+                    </a>
+                    <span class="text-white fw-bold small"><i class="fas fa-lock me-1"></i> PAGO SEGURO Y SUPER PROMO 15% EXTRA</span>
+                </div>
+
+                <div class="content-box p-4" style="border-radius: 0 0 10px 10px;">
+                    <div class="checkout-body">
+                        <div class="checkout-product-summary d-flex align-items-center pb-3 mb-3 border-bottom">
+                            <img src="src/assets/images/miniatura_checkout_resumen.jpg" class="rounded me-3" style="width: 70px; height: 70px;" alt="Kit de 4 Lámparas 100 LED">
+                            <div class="summary-details">
+                                <p class="product-name fw-bold mb-0">KIT DE 4 LÁMPARAS SOLARES (100 LED)</p>
+                                <p class="product-price fw-bold text-danger mb-0">$1,567.50 MXN</p>
+                            </div>
+                        </div>
+                        
+                        <div class="shipping-method-option mb-3">
+                            <label class="d-flex justify-content-between align-items-center p-2 border rounded">
+                                <input type="radio" name="shipping_option" value="Envio Estandar (7-12 dias) - GRATIS" checked>
+                                Envío Estándar (7-12 días)
+                                <span class="shipping-cost fw-bold text-success">Gratis</span>
+                            </label>
+                            <label class="d-flex justify-content-between align-items-center p-2 border rounded mt-2">
+                                <input type="radio" name="shipping_option" value="Envio Express Prioritario (3-5 dias) +$99.00">
+                                Envío Express Prioritario (3-5 días)
+                                <span class="shipping-cost fw-bold text-danger">+$99.00</span>
+                            </label>
+                        </div>
+                        
+                        <form action="https://formspree.io/f/xgvnpvye" method="POST" class="checkout-form-modal" id="checkout-form">
+                            
+                            <input type="text" name="producto_pedido" class="form-control mb-3 text-center fw-bold text-danger" 
+                                   value="KIT DE 4 LÁMPARAS SOLARES (100 LED)" readonly>
+
+                            <input type="hidden" name="Precio_Total_MXN" id="precio-total-formspree" value=""> 
+
+                            <input type="hidden" name="Tipo_Envio_Elegido" id="tipo-envio-formspree" value="Envio Estandar (7-12 dias) - GRATIS">
+
+                            <h3 class="fs-5 mb-3 text-center text-primary">Completa tu información de Envío</h3>
+                            
+                            <h5 class="form-title">Nombre <span class="text-danger">*</span></h5>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+                            </div>
+                            
+                            <h5 class="form-title">Apellido <span class="text-danger">*</span></h5>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" name="apellido" class="form-control" placeholder="Apellido" required>
+                            </div>
+
+                            <h5 class="form-title">Teléfono con WhatsApp Activo <span class="text-danger">*</span></h5>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fab fa-whatsapp"></i></span>
+                                <input type="tel" name="telefono" class="form-control" placeholder="Teléfono con WhatsApp Activo" required>
+                            </div>
+                            
+                            <h5 class="form-title">Correo electrónico <span class="text-danger">*</span></h5>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" name="correo" class="form-control" placeholder="Correo electrónico" required>
+                            </div>
+                            
+                            <h5 class="form-title">Calle y número <span class="text-danger">*</span></h5>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                <input type="text" name="direccion" class="form-control" placeholder="Calle y número" required>
+                            </div>
+                            
+                            <h5 class="form-title">Referencias</h5>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-info-circle"></i></span>
+                                <input type="text" name="referencias" class="form-control" placeholder="Entre calles, color fachada, cerca de...">
+                            </div>
+                            
+                            <h5 class="form-title">Colonia <span class="text-danger">*</span></h5>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                <input type="text" name="colonia" class="form-control" placeholder="Colonia" required>
+                            </div>
+                            
+                            <h5 class="form-title">Alcaldía o Municipio <span class="text-danger">*</span></h5>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                <input type="text" name="ciudad" class="form-control" placeholder="Alcaldía o Municipio" required>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <h5 class="form-title">Código postal <span class="text-danger">*</span></h5>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-mail-bulk"></i></span>
+                                        <input type="text" name="postal" class="form-control" placeholder="Código postal" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <h5 class="form-title">Estado <span class="text-danger">*</span></h5>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
+                                        <select name="estado" class="form-select" required>
+                                            <option value="">Estado *</option>
+                                            <option value="AGS">Aguascalientes</option>
+                                            <option value="BC">Baja California</option>
+                                            <option value="BCS">Baja California Sur</option>
+                                            <option value="CAM">Campeche</option>
+                                            <option value="CHIS">Chiapas</option>
+                                            <option value="CHIH">Chihuahua</option>
+                                            <option value="CDMX">Ciudad de México</option>
+                                            <option value="COAH">Coahuila</option>
+                                            <option value="COL">Colima</option>
+                                            <option value="DUR">Durango</option>
+                                            <option value="GTO">Guanajuato</option>
+                                            <option value="GRO">Guerrero</option>
+                                            <option value="HGO">Hidalgo</option>
+                                            <option value="JAL">Jalisco</option>
+                                            <option value="MEX">México</option>
+                                            <option value="MICH">Michoacán</option>
+                                            <option value="MOR">Morelos</option>
+                                            <option value="NAY">Nayarit</option>
+                                            <option value="NL">Nuevo León</option>
+                                            <option value="OAX">Oaxaca</option>
+                                            <option value="PUE">Puebla</option>
+                                            <option value="QRO">Querétaro</option>
+                                            <option value="QR">Quintana Roo</option>
+                                            <option value="SLP">San Luis Potosí</option>
+                                            <option value="SIN">Sinaloa</option>
+                                            <option value="SON">Sonora</option>
+                                            <option value="TAB">Tabasco</option>
+                                            <option value="TAM">Tamaulipas</option>
+                                            <option value="TLAX">Tlaxcala</option>
+                                            <option value="VER">Veracruz</option>
+                                            <option value="YUC">Yucatán</option>
+                                            <option value="ZAC">Zacatecas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="whatsapp-alert p-2 rounded text-success fw-bold small text-center mb-4 border border-success">
+                                <i class="fab fa-whatsapp me-2"></i> ¡PAGO SEGURO! Nos contactaremos vía WhatsApp (al número que nos proporciones) para asegurar su pago y coordinar el envío.
+                            </p>
+
+                            <button type="submit" class="btn-pay-full btn btn-lg w-100">
+                                <i class="fas fa-credit-card me-2"></i> Pagar Ahora - $<span id="final-price-full"></span> MXN
+                            </button>
+                            <div class="discount-info text-center small mt-2 text-danger">
+                                ¡Pago Online! Consigue tu <strong>15% de descuento ADICIONAL</strong>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 d-none d-lg-block">
+                <div class="sidebar-checkout content-box sticky-top" style="top: 20px;">
+                    <h4 class="fs-5 text-primary mb-3"><i class="fas fa-money-check-alt me-2"></i> Opciones de Pago Flexibles</h4>
+                    
+                    <div class="payment-option border-start border-3 border-warning ps-3 mb-4">
+                        <h5 class="h6 fw-bold text-dark">PAGO SEGURO POR DEPÓSITO O TRANSFERENCIA</h5>
+                        <p class="small text-muted mb-1">
+                            ¡Máxima confianza! Después de completar tu pedido, te enviaremos los datos bancarios (OXXO, SPEI o banco) a tu WhatsApp. 
+                        </p>
+                        <p class="small fw-bold text-success mb-0">
+                            <i class="fas fa-lock me-1"></i> Tu pedido se confirma automáticamente al realizar el pago.
+                        </p>
+                    </div>
+                    
+                    <div class="payment-option border-start border-3 border-success ps-3 mb-4">
+                        <h5 class="h6 fw-bold text-dark">PAGA AL RECIBIR</h5>
+                        <p class="small text-muted mb-2">
+                            Paga directamente cuando recibas tu producto. Sin riesgos, sin sorpresas.
+                        </p>
+                        <button type="button" class="btn btn-success btn-sm w-100" data-bs-toggle="modal" data-bs-target="#pagarAlRecibir-Modal">
+                            <i class="fas fa-box-open me-2"></i> Pagar al Recibir
+                        </button>
+                    </div>
+                    
+                    <hr>
+
+                    <h4 class="fs-5 text-success mb-3"><i class="fas fa-shield-alt me-2"></i> Tu Compra Está Protegida</h4>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">
+                            <span class="fw-bold text-dark"><i class="fas fa-undo text-danger me-2"></i> Devolución Garantizada:</span>
+                            Si no queda satisfecho, tiene 30 días para devolver el producto sin costo.
+                        </li>
+                        <li class="mb-2">
+                            <span class="fw-bold text-dark"><i class="fas fa-truck-loading text-primary me-2"></i> Envío Asegurado:</span>
+                            Cubrimos cualquier pérdida o daño durante el trayecto hasta su domicilio.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <section class="container mt-5 mb-4" id="policies">
+      <h3 class="text-center fw-bold">Políticas — Envíos, Devoluciones y Garantía</h3>
+      <div class="content-box">
+          <h5>Envíos</h5>
+          <ul>
+            <li>Envío estándar: 5–7 días hábiles en la República Mexicana (sujeto a cobertura del transportista).</li>
+            <li>Envío express disponible bajo tarifa adicional y según disponibilidad.</li>
+          </ul>
+          <h5>Devoluciones</h5>
+          <ul>
+            <li>Devoluciones dentro de los primeros 30 días por defecto de fábrica o daños: reembolso o reemplazo.</li>
+            <li>El producto debe devolverse en condiciones originales y con embalaje cuando sea posible.</li>
+            <li>El costo de devolución será cubierto por la tienda si la devolución es por defecto de fabricación. En otros casos, el cliente puede cubrir el costo de envío.</li>
+          </ul>
+          <h5>Garantía (legal y transparente)</h5>
+          <p class="small">Ofrecemos **garantía por defectos de fabricación** a partir de la fecha de compra. Para tramitar la garantía se requiere:</p>
+          <ol class="small">
+            <li>Comprobante de compra o número de pedido.</li>
+            <li>Fotos o video que muestren el defecto claramente.</li>
+            <li>Descripción del problema y fecha aproximada de inicio.</li>
+          </ol>
+          <p class="small">**Casos que pueden anular la garantía:** uso indebido comprobado (golpes, exposición a temperaturas extremas fuera de especificaciones), modificaciones no autorizadas, apertura del equipo por personal no autorizado, uso de baterías o componentes no recomendados por el fabricante. Estos son motivos legítimos para denegar una reclamación cuando hay evidencia clara. La existencia de estos motivos debe ser demostrada y la evaluación será realizada por nuestro servicio técnico.</p>
+          <p class="small">**Proceso:** Tras recibir la documentación, evaluaremos la solicitud en un plazo de 7–15 días hábiles. En caso de proceder, ofreceremos reemplazo, reparación o reembolso según disponibilidad.</p>
+      </div>
+    </section>
+
+<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="privacyModalLabel">🔒 Aviso de Privacidad</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6 class="fw-bold text-success">¿Para qué usamos sus datos?</h6>
+        <p>Los datos solicitados en el formulario de Checkout (Nombre, WhatsApp, Dirección) son estrictamente necesarios para:</p>
+        <ul class="list-unstyled small">
+            <li>✅ <strong>Procesamiento de Pedidos:</strong> Tramitar y entregar su compra.</li>
+            <li>✅ <strong>Confirmación de Pago:</strong> Contactarle por WhatsApp o correo para verificar su orden y pago.</li>
+            <li>✅ <strong>Seguimiento de Envío:</strong> Notificarle sobre el estado de su entrega.</li>
+        </ul>
+        
+        <h6 class="fw-bold text-danger mt-3">Transferencia de Datos</h6>
+        <p class="small">Solo compartiremos su nombre y dirección con <strong>empresas de mensajería (FedEx, DHL +)</strong> para que puedan llevar el producto a su domicilio. Nada más.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: PAGAR AL RECIBIR -->
+<div class="modal fade" id="pagarAlRecibir-Modal" tabindex="-1" aria-labelledby="pagarAlRecibir-Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content border-0 shadow-lg">
+      <!-- HEADER -->
+      <div class="modal-header bg-gradient" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border: none;">
+        <div>
+          <h5 class="modal-title text-white" id="pagarAlRecibir-Label">
+            <i class="fas fa-box-open me-2"></i> PAGAR AL RECIBIR
+          </h5>
+          <p class="small text-white-50 mb-0">Completa tu información de entrega</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body p-4">
+        <form id="pagarAlRecibir-Form" method="POST">
+          
+          <!-- FILA 1: NOMBRE Y APELLIDO -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold small text-muted">Nombre <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="par-nombre" name="nombre" placeholder="Nombre" readonly>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold small text-muted">Apellido <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="par-apellido" name="apellido" placeholder="Apellido" readonly>
+            </div>
+          </div>
+
+          <!-- FILA 2: TELÉFONO Y CORREO -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold small text-muted">WhatsApp <span class="text-danger">*</span></label>
+              <input type="tel" class="form-control" id="par-telefono" name="telefono" placeholder="Teléfono" readonly>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold small text-muted">Correo <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="par-correo" name="correo" placeholder="Correo" readonly>
+            </div>
+          </div>
+
+          <!-- FILA 3: DIRECCIÓN -->
+          <div class="mb-3">
+            <label class="form-label fw-bold small text-muted">Dirección (Calle y número) <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="par-direccion" name="direccion" placeholder="Calle y número" readonly>
+          </div>
+
+          <!-- FILA 4: REFERENCIAS -->
+          <div class="mb-3">
+            <label class="form-label fw-bold small text-muted">Referencias</label>
+            <input type="text" class="form-control" id="par-referencias" name="referencias" placeholder="Entre calles, color fachada, cerca de..." readonly>
+          </div>
+
+          <!-- FILA 5: COLONIA Y CIUDAD -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold small text-muted">Colonia <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="par-colonia" name="colonia" placeholder="Colonia" readonly>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold small text-muted">Ciudad/Municipio <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="par-ciudad" name="ciudad" placeholder="Ciudad" readonly>
+            </div>
+          </div>
+
+          <!-- FILA 6: ESTADO Y CP -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold small text-muted">Estado <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="par-estado" name="estado" placeholder="Estado" readonly>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-bold small text-muted">Código Postal <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="par-cp" name="postal" placeholder="CP" readonly>
+            </div>
+          </div>
+
+          <!-- TIPO DE ENVÍO (oculto pero capturado) -->
+          <input type="hidden" id="par-tipoEnvio" name="tipoEnvio">
+          <input type="hidden" id="par-precioTotal" name="precioTotal">
+          <input type="hidden" id="par-folio" name="folio">
+
+          <!-- INFORMACIÓN DE RESUMEN -->
+          <div class="alert alert-info border-0 bg-light-info p-3 mb-3" role="alert">
+            <p class="small mb-2"><strong>📦 Resumen del Pedido:</strong></p>
+            <p class="small mb-1">Producto: KIT DE 4 LÁMPARAS SOLARES (100 LED)</p>
+            <p class="small mb-1">Envío: <span id="par-display-tipoEnvio">Estándar (7-12 días) - Gratis</span></p>
+            <p class="small mb-0"><strong>Total: $<span id="par-display-total">1,567.50</span> MXN</strong></p>
+          </div>
+
+          <!-- INFO IMPORTANTE -->
+          <div class="alert alert-success border-0 p-3" role="alert">
+            <p class="small mb-0">
+              <i class="fas fa-check-circle me-2 text-success"></i>
+              <strong>¡PAGO SEGURO!</strong> Nos contactaremos vía WhatsApp para confirmar tu pedido y coordinar la entrega.
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="modal-footer bg-light border-top">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          <i class="fas fa-times me-2"></i> Cancelar
+        </button>
+        <button type="button" class="btn btn-success btn-lg" id="pagarAlRecibir-Btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border: none;">
+          <i class="fas fa-check-circle me-2"></i> CONFIRMAR PEDIDO
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: CONFIRMACIÓN EXITOSA -->
+<div class="modal fade" id="confirmacion-Modal" tabindex="-1" aria-labelledby="confirmacion-Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-body text-center p-5">
+        <div class="mb-4">
+          <i class="fas fa-check-circle" style="font-size: 80px; color: #10b981;"></i>
+        </div>
+        <h4 class="fw-bold text-success mb-3">¡Pedido Confirmado!</h4>
+        <p class="text-muted mb-3">
+          Tu pedido ha sido generado correctamente. En breve nos contactaremos vía WhatsApp para confirmar los detalles de entrega.
+        </p>
+        <div class="alert alert-light border border-success p-3 mb-4">
+          <p class="small mb-1"><strong>Folio de Pedido:</strong></p>
+          <p class="h6 text-success" id="confirmacion-folio">OFX-2025-XXXX</p>
+        </div>
+        <p class="small text-muted mb-0">
+          <i class="fas fa-info-circle me-2"></i> Revisa tu WhatsApp para más detalles
+        </p>
+      </div>
+      <div class="modal-footer bg-light border-top">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          <i class="fas fa-home me-2"></i> Volver al Inicio
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="src/js/recaudo_checker.js"></script>
+    <script src="src/js/script.js"></script>
+</body>
+</html>
