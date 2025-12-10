@@ -113,7 +113,7 @@
               </div>
             </div>
             <div class="text-sm text-slate-700 font-semibold mb-2">✓ Garantía 30 días + Envío rápido + Soporte 24/7</div>
-            <div id="countdown-inline" class="text-sm font-bold text-amber-600">Oferta termina en: --:--:--</div>
+            <div id="countdown-inline" class="text-sm font-bold text-red-600 animate-pulse">⏰ OFERTA DE DICIEMBRE ACTIVA - Termina: 31 de Diciembre</div>
           </div>
 
           <!-- Shipping Info -->
@@ -170,9 +170,9 @@
               
               <div class="space-y-2">
                 <!-- Botón 1: Pagar Ahora -->
-                <button type="button" id="btnPagarAhora" class="w-full px-4 py-3 sm:py-3.5 bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white font-semibold text-sm sm:text-base rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-102 flex items-center justify-center gap-2">
+                <button type="button" id="btnPagarAhora" class="w-full px-4 py-3 sm:py-3.5 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold text-sm sm:text-base rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-102 flex items-center justify-center gap-2">
                   <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                  <span>¡Paga Ahora! $1,567.50 MXN</span>
+                  <span>⚡ ¡Precio Sin Descuento! $1,567.50 MXN</span>
                 </button>
 
                 <!-- Botón 0: Paga al Recibir (desactivado por defecto) -->
@@ -194,6 +194,14 @@
 
             <p class="text-xs text-slate-500 text-center">Al completar tu pedido, nos contactaremos por WhatsApp para coordinar el envío y pago seguro.</p>
           </form>
+
+          <!-- Botón Especificaciones -->
+          <div class="mb-4 pt-4 border-t border-slate-200">
+            <button type="button" onclick="document.getElementById('specs-section').scrollIntoView({behavior: 'smooth'})" class="w-full px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold text-sm rounded-lg transition-all duration-200 flex items-center justify-center gap-2">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              📋 Ver Especificaciones Técnicas
+            </button>
+          </div>
 
           <!-- Benefits -->
           <div class="space-y-3 pt-4 border-t border-slate-200">
@@ -226,7 +234,7 @@
           El contenido audiovisual es ilustrativo. El modelo enviado será exclusivamente el designado en las fotografías del anuncio.
         </p>
 
-        <h3 class="text-xl font-bold text-slate-900 mb-3 mt-6">Especificaciones técnicas</h3>
+        <h3 id="specs-section" class="text-xl font-bold text-slate-900 mb-3 mt-6">Especificaciones técnicas</h3>
         <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
           <li>100 LEDs SMD2835 por lámpara</li>
           <li>Cobertura 270°</li>
@@ -249,6 +257,10 @@
           <details class="p-4 border-2 border-slate-200 rounded-lg cursor-pointer hover:border-sky-300 transition-colors">
             <summary class="font-semibold text-slate-800">¿Necesito instalar cables?</summary>
             <div class="mt-3 text-slate-600 text-sm">No. Son 100% solares y autosuficientes.</div>
+          </details>
+          <details class="p-4 border-2 border-slate-200 rounded-lg cursor-pointer hover:border-sky-300 transition-colors">
+            <summary class="font-semibold text-slate-800">¿Cuánto dura la batería?</summary>
+            <div class="mt-3 text-slate-600 text-sm">8-12 horas con carga completa en modo constante. En modo sensor PIR, la batería dura hasta 20 horas. El tiempo varía según exposición solar.</div>
           </details>
         </div>
       </div>
